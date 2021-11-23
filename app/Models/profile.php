@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class profile extends Model
 {
-    protected $fillable = ['nom', 'adresse', 'telephone', 'id_panier'];
+    protected $fillable = ['nom', 'adresse', 'telephone'];
+
+    public function panier(){
+        return $this->belongsTo('Panier');
+    }
 }

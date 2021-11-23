@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class panier extends Model
 {
-    protected $fillable = ['id_product'];
+    public function profile(){
+        return $this->hasOne('Profile');
+    }
+
+    public function order(){
+        return $this->hasOne('Order');
+    }
+
+    public function product(){
+        return $this->belongsToMany('Product');
+    }
 }

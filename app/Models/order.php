@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class order extends Model
 {
-    protected $fillable = ['id_panier'];
+    public function panier(){
+        return $this->belongsTo('Panier');
+    }
 }

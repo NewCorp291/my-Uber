@@ -15,7 +15,7 @@ class CreatePanierTable extends Migration
     {
         Schema::create('panier', function (Blueprint $table) {
             $table->increment('id');
-            $table->foreign('id_product')->references('id')->on('product');
+            $table->integer('id_product');
             $table->timestamps();
         });
     }

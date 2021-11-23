@@ -17,8 +17,8 @@ class CreateProfileTable extends Migration
             $table->increments('id');
             $table->string('nom', 256);
             $table->string('adresse', 256);
-            $table->integer('telephone', 256);
-            $table->foreing('id_panier', 256)->references('id')->on('panier');
+            $table->integer('telephone');
+            $table->integer('id_panier');
             $table->timestamps();
         });
     }
