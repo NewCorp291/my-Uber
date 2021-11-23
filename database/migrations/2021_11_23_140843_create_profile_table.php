@@ -14,7 +14,11 @@ class CreateProfileTable extends Migration
     public function up()
     {
         Schema::create('profile', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('nom', 256);
+            $table->string('adresse', 256);
+            $table->integer('telephone', 256);
+            $table->foreing('id_panier', 256)->references('id')->on('panier');
             $table->timestamps();
         });
     }

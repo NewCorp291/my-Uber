@@ -14,7 +14,8 @@ class CreateOrderTable extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->foreing('id_panier', 256)->references('id')->on('panier');
             $table->timestamps();
         });
     }
