@@ -14,7 +14,7 @@ class CreatePanierTable extends Migration
     public function up()
     {
         Schema::create('panier', function (Blueprint $table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('id_product');
             $table->timestamps();
         });
