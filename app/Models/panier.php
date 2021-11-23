@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class panier extends Model
 {
-    use HasFactory;
+    protected $fillable = ['id_product'];
 }
