@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\API\client;
+namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\product;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class product extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,12 @@ class product extends Controller
     public function index()
     {
         //
+    }
+
+    public function indexSeller()
+    {
+        $orders = Order::where('status', 'like', 'accept')->get();
+        return($orders);
     }
 
     /**
@@ -32,10 +38,10 @@ class product extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\product  $product
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product)
+    public function show(Order $order)
     {
         //
     }
@@ -44,10 +50,10 @@ class product extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\product  $product
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, product $product)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -55,10 +61,10 @@ class product extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\product  $product
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy(Order $order)
     {
         //
     }

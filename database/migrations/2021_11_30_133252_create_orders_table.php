@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePanierTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreatePanierTable extends Migration
      */
     public function up()
     {
-        Schema::create('panier', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_product');
+            $table->integer('id_panier');
+            $table->enum('status_seller', array('accept', 'refuse', 'ready'));
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreatePanierTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('panier');
+        Schema::dropIfExists('orders');
     }
 }
